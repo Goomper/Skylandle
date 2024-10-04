@@ -1,0 +1,32 @@
+.body {
+    background-color: rgb(60, 219, 219);
+}
+
+.h1 {
+    font:bold;
+    font-size: 6ch;
+}
+
+.header {
+    margin-top: 0%;
+    align-content: center;
+}
+
+.Grid {
+    display: block;
+    grid-template-areas: "stack";
+
+    >* {
+        grid-area: stack;
+    }
+}
+
+.centered {
+    background-color: aqua;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0%;
+    padding-right: 0%;
+    
+    align-content: center;
+}
