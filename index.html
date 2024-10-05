@@ -18,14 +18,20 @@
 
     <p>hello</p>
 
-    <form action="/">
-        <select name="Skylander" id="skylander">
-            <option value="spyro">Spyro</option>
-            <option value="gill_grunt">Gill Grunt</option>
-            <option value="trigger_happy">Trigger Happy</option>
+    <form onsubmit="submit.js" action="">
+        <select name="Skylander" id="skylander" onselect="b">
+            <optgroup label="Spyro's Adventure">
+                <option value="spyro">Spyro</option>
+                <option value="gill_grunt">Gill Grunt</option>
+                <option value="trigger_happy">Trigger Happy</option>    
+            </optgroup>
         </select>
-        <input type="submit" value="submit">
+
+        
+
     </form>
+
+    
 
 </body>
 </html>  
