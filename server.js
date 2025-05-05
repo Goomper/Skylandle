@@ -63,7 +63,6 @@ app.get("/", async (req, res) => {
     const Guesses = req.session.guesses
 
     for (let i = 0; i < Guesses.length; i++) {
-        console.log(Guesses[i].name)
         if (Guesses && Guesses[i].name == currentSkylander.name) {
             res.redirect("/win")
             return
@@ -80,6 +79,8 @@ app.get("/", async (req, res) => {
 
 app.get("/win", (req, res) => {
     let currentSkylander = req.session.currentSkylander
+    req.session.views = 0
+    req.query.Guess = []
     console.log(currentSkylander)
     res.render("winscreen.njk", {
         current: currentSkylander

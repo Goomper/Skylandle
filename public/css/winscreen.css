@@ -57,3 +57,21 @@ body {
     border-width: 3px;
     background-color: lightgoldenrodyellow;
 }
+
+.AgainButton {
+    display: grid;
+
+    justify-items: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    border-width: 5px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+
+    border-width: 3px;
+    background-color: lightgoldenrodyellow;
+}
