@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const guessContainer = document.getElementById("BoxRows")
 
+    guesses.reverse()
+
     guesses.forEach(guess => {
         const BoxRow = document.createElement("div")
         BoxRow.classList.add("BoxRow")

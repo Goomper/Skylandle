@@ -63,7 +63,6 @@ app.get("/", async (req, res) => {
     const Guesses = req.session.guesses
 
     for (let i = 0; i < Guesses.length; i++) {
-        console.log(Guesses[i].name)
         if (Guesses && Guesses[i].name == currentSkylander.name) {
             res.redirect("/win")
             return
