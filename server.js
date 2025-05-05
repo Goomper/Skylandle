@@ -80,6 +80,8 @@ app.get("/", async (req, res) => {
 
 app.get("/win", (req, res) => {
     let currentSkylander = req.session.currentSkylander
+    req.session.views = 0
+    req.query.Guess = []
     console.log(currentSkylander)
     res.render("winscreen.njk", {
         current: currentSkylander
