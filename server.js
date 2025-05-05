@@ -70,7 +70,7 @@ app.get("/", async (req, res) => {
         }
     }
 
-    res.render('index.njk', {
+    res.render('skylandle.njk', {
         skylanders: skylanders,
         current: currentSkylander,
         views: req.session.views,
