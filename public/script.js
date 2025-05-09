@@ -12,31 +12,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         menu.classList.toggle("change");
     })
 
-    const resetbutton = document.getElementById("resetbutton")
-    resetbutton.addEventListener("click", async () => {
-        resetbutton.style.color = "red"
-    })
-    const chasebutton = document.getElementById("chasebutton")
-    let chaseenabled = false
-    chasebutton.addEventListener("click", async () => {
-        if (chaseenabled === false) {
-            chaseenabled = true
-        } else {
-            chaseenabled = false
-        }
-        console.log(chaseenabled)
-    })
-    const seriesbutton = document.getElementById("seriesbutton")
-    let seriesenabled = false
-    seriesbutton.addEventListener("click", async () => {
-        if (seriesenabled === false) {
-            seriesenabled = true
-        } else {
-            seriesenabled = false
-        }
-        console.log(seriesenabled)
-    })
-
     const guessresponse = await fetch("/api/guesses")
     const guessdata = await guessresponse.json()
     const guesses = guessdata.guesses
@@ -149,5 +124,47 @@ document.addEventListener("DOMContentLoaded", async () => {
         } else {
             chaseBox.style.backgroundColor = "red"
         }
+    })
+
+    const resetbutton = document.getElementById("resetbutton")
+    resetbutton.addEventListener("click", async () => {
+        resetbutton.style.color = "red"
+
+        guessdata.guesses = [];
+
+        await fetch('/api/guesses', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ guesses: [] })
+        })
+
+        const boxRows = document.getElementsByClassName("BoxRow")
+        while (boxRows.length > 0) {
+            boxRows[0].remove();
+        }
+    })
+
+    const chasebutton = document.getElementById("chasebutton")
+    let chaseenabled = false
+    chasebutton.addEventListener("click", async () => {
+        if (chaseenabled === false) {
+            chaseenabled = true
+        } else {
+            chaseenabled = false
+        }
+        console.log(chaseenabled)
+    })
+
+    const seriesbutton = document.getElementById("seriesbutton")
+    let seriesenabled = false
+    seriesbutton.addEventListener("click", async () => {
+        if (seriesenabled === false) {
+            seriesenabled = true
+        } else {
+            seriesenabled = false
+        }
+        console.log(seriesenabled)
     })
 })
