@@ -87,6 +87,19 @@ app.get("/win", (req, res) => {
     })
 })
 
+app.post("/api/guesses", (req, res) => {
+    const newGuesses = req.body.guesses
+
+    if (!Array.isArray(newGuesses)) {
+        return res.status(400).json({ error: "Invalid data format" })
+    }
+
+    req.session.views = 0
+
+    req.session.guesses = newGuesses; 
+    res.status(200).json({ message: "Guesses updated successfully" })
+})
+
 app.get("/api/guesses", (req, res) => {
     const guesses = req.session.guesses || [];
     res.json({ guesses });

@@ -12,7 +12,7 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 6rem 3rem 1fr 3rem;
+    grid-template-rows: 6.5rem 3rem 1fr 3rem;
 
     min-height: 100vh;
     max-height: 10000000vh;
@@ -27,6 +27,7 @@
 body {
     background-image: url('../ALLSkylanders-ezgif.com-speed.gif');
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: 100%;
     font-size: 1rem;
 }
@@ -38,9 +39,13 @@ body {
 
     justify-self: center;
 
-    background-color: rgb(40, 40, 40, 0.6);
+    background-color: rgb(40, 40, 40, 0.8);
     border-bottom-left-radius: 30%;
     border-bottom-right-radius: 30%;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
     
     width: 50%;
 
@@ -53,8 +58,12 @@ body {
 }
 
 .headertext {
-    font-size: 6rem;
-    color: #333;
+    display: grid;
+    font-size: 6vw;
+    justify-content: center;
+    background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(82, 202, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .skylanderslogo {
